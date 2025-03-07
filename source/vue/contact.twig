@@ -4,47 +4,46 @@
 
 {% block content %}
 
-<h1>Comment nous contacter ?</h1>
+  {% if form.valide is defined %} 
+    {% if form.valide == true %}
+        <script>console.log("Nous vous recontacterons très bientôt");</script>
+    {% endif %}
+ {% else %}  
 
-{# <div class="coordonnees">
-    <ul>
-        <li>Par e-mail: <a href="mailto:louisberthaud.luthiers@gmail.com">louisberthaud.luthiers@gmail.com</a></li>
-        <li>Par téléphone : <a href="tel:0490856503">04 90 85 65 03</a></li>
-        <li>Sur place</li>
-    </ul>
-    <div style="text-decoration:none; overflow:hidden;max-width:100%;width:400px;height:400px;"><div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=19+rue+Croix+84000+Avignon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-map-code" href="https://www.bootstrapskins.com/themes" id="authmaps-data">premium bootstrap themes</a><style>#gmap-canvas img{max-height:none;max-width:none!important;background:none!important;}</style></div>
-</div> #}
+<h1>Contact</h1>
+
 <div class="formulaire">
     <form action="index.php?page=contact" method="post" enctype="application/x-www-form-urlencoded">
 
-        <label for="role" class="sr-only">Objet :</label>
-            <select class="form-control" name="role">
+        <label for="selectObjet" class="sr-only">Objet :</label>
+            <select class="form-control" name="selectObjet" id="selectObjet">
                 <option value="1">Achat d'instrument</option>
                 <option value="2">Vente d'instrument</option>
                 <option value="3">Location d'instrument</option>
                 <option value="4">Entretien d'instrument</option>
                 <option value="5">Réparation d'instrument</option>
-                <option value="6">Autre sujet</option>
+                {# <option value="6">Autre sujet</option> #}
             </select>
 
 
-        <label for="inputNomContact" class="sr-only">Nom :</label>
-        <input type="text" id="inputNomContact" name="nom" class="form-control" required>
+        <label for="inputNom" class="sr-only">Nom :</label>
+        <input type="text" id="inputNom" name="inputNom" class="form-control" required>
 
-        <label for="inputPrenomContact" class="sr-only">Prénom :</label>
-        <input type="text" id="inputPrenomContact" name="prenom" class="form-control" required>
+        <label for="inputPrenom" class="sr-only">Prénom :</label>
+        <input type="text" id="inputPrenom" name="inputPrenom" class="form-control" required>
 
         <label for="inputEmail" class="sr-only">E-mail :</label>
-        <input type="email" id="inputEmailContact" name="inputEmailContact" class="form-control" required>
+
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" required>
         
         <label for="inputTelephone" class="sr-only">
             Numéro de téléphone : <br>
-            <small>Format requis : 0123456789</small>
+            <small>Format requis : <span style="font-weight:bold">0</span>123456789</small>
         </label>
-        <input type="tel" id="inputTelephoneContact" name="inputTelephoneContact" class="form-control" required minlength="10" maxlength="10" pattern="0{1}[0-9]{9}">
+        <input type="tel" id="inputTelephone" name="inputTelephone" class="form-control" required minlength="10" maxlength="10" pattern="0{1}[0-9]{9}">
 
         <label for="inputMessage" class="sr-only">Message</label>
-        <input type="text" id="inputMessageContact" name="inputMessageContact" class="form-control" required minlength="3" maxlength="255">
+        <input type="text" id="inputMessage" name="inputMessage" class="form-control" required minlength="3" maxlength="255">
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnContacter">Envoyer</button>
     </form>
@@ -53,14 +52,14 @@
 <div class="coordonnees">
     <ul>
         <li>Par e-mail: <a href="mailto:louisberthaud.luthiers@gmail.com">louisberthaud.luthiers@gmail.com</a></li>
-        <li>Par téléphone : <a href="tel:0490856503">04 90 85 65 03</a></li>
+        <li>Par téléphone : <a href="tel:+33(0)490856503">04 90 85 65 03</a></li>
         <li>Sur place
-        <br><small>Psst... Nous sommes à deux (2) minutes à pieds du <a href="https://conservatoiregrandavignon.com/" target="_blank">Conservatoire du Grand Avignon</a> !</small>
+        <br><small>Nous sommes à deux (2) minutes à pieds du <a href="https://conservatoiregrandavignon.com/" target="_blank">Conservatoire du Grand Avignon</a> !</small>
         </li>
     </ul>
     <div style="text-decoration:none; overflow:hidden;max-width:100%;width:400px;height:400px;"><div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=19+rue+Croix+84000+Avignon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-map-code" href="https://www.bootstrapskins.com/themes" id="authmaps-data">premium bootstrap themes</a><style>#gmap-canvas img{max-height:none;max-width:none!important;background:none!important;}</style></div>
 </div>
 
 
-
+{% endif %}
 {% endblock %}
