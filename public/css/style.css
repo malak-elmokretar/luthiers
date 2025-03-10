@@ -1,3 +1,84 @@
 :root {
-    color-scheme: light;
+  color-scheme: light;
 }
+
+footer div{
+  display: flex;
+  justify-content: center;
+}
+
+footer div span, footer div ul{
+  display: block;
+  justify-content: center;
+}
+
+.prestations, .atelier, .artisans {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.prestations img, .atelier img, .artisans img {
+  width: 45%;
+  height: auto;
+}
+  
+div.prestations div.textePrestations, div.atelier div.texteAtelier, div.artisans div.texteArtisans {
+  display: block;
+  justify-content: space-between;
+  width: 50%;
+}
+  
+.prestations {
+  flex-direction: row;
+}
+  
+.artisans {
+  flex-direction: row;
+}
+
+.atelier {
+  flex-direction: row-reverse;
+}
+  
+.prestations img, .atelier img {
+  margin-right: 2rem;
+}
+  
+.artisans img {
+  margin-left: 2rem;
+}
+  
+.content h3, .content p {
+  margin-bottom: 1rem;
+}
+  
+.content button {
+  margin-top: auto;
+}
+  
+
+@media (max-width: 768px) {
+  .prestations, .atelier, .artisans {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .prestations img, .atelier img, .artisans img {
+    max-width: 100%;
+    margin-bottom: 5rem;
+  }
+  
+  .prestations .content, .atelier .content, .artisans .content {
+    width: 100%;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
+  
+  
+  

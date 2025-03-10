@@ -1,1 +1,3 @@
-console.log("hello");
+function contactSoumis(){
+    console.log("Nous vous recontacterons très bientôt");
+}
