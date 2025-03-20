@@ -1,18 +1,28 @@
 <?php
 
-function contactControleur($twig){
+function contactControleur($twig, $db){
     $form = array();
     if (isset($_POST["btnContacter"])){
-        $selectObjet = $_POST["selectObjet"];
-        $inputNom = $_POST["inputNom"];
-        $inputPrenom = $_POST["inputPrenom"];
-        $inputEmail = $_POST["inputEmail"];
-        $inputTelephone = $_POST["inputTelephone"];
-        $inputMessage =$_POST["inputMessage"];
+        $objet = $_POST["selectObjet"];
+        $nom = $_POST["inputNom"];
+        $prenom = $_POST["inputPrenom"];
+        $email = $_POST["inputEmail"];
+        $telephone = $_POST["inputTelephone"];
+        $message =$_POST["inputMessage"];
         $form["valide"] = true;
-        $form['email'] = $inputEmail;
-        $form['objet'] = $selectObjet;
-    }
+        $form['email'] = $email;
+        $form['objet'] = $objet;
+        $contactMessage = new ContactMessage($db);
+        // $listeMessages = $contactMessage -> select();
+        $exec = $contactMessage -> insert($email, $nom, $prenom, $email, $telephone, $message);
+        if (!$exec){
+            $form["valide"] = false;
+            $form["erreur"] = "Problème d'insertion, veuillez réessayer plus tard.";
+        }
+    } 
+    // else {
+    //     $listeMessages = $contactMessage -> select();
+    // }
     echo $twig->render("contact.twig", array("form"=>$form));
 }
 

@@ -11,36 +11,23 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg bg-light">
-                <div class="container-fluid">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.php?page=atelier">Atelier</a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=artisans">Artisans</a>
+                    </li>
                     <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="Logo" style="width:160px;height:160px;"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?page=atelier">Atelier</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?page=artisans">Artisans</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?page=prestations">Prestations</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php?page=contact">Contact</a>
-                            </li>
-                        </ul>
-                        {# <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> #}
-                    </div>
-                </div>
+                    <li>
+                        <a href="index.php?page=prestations">Prestations</a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=contact">Contact</a>
+                    </li>
+                        
+                </ul>
             </nav>
         </header>
 
@@ -51,11 +38,12 @@
         <footer>
                 <div class="grilleFooter">
                     <img src="./images/logo.svg" alt="logo Louis et Berthaud luthiers" style="width:160px; height:160px;">
-                    <div class="info">
-                        <span>Informations</span>
+                    <div class="contact">
+                        <span>Contact</span>
                         <ul>
-                            <li><a href="index.php?page=mentionsLegales">Mention légales</a></li>
-                            <li>Site réalisé par <a href="#" target="_blank" rel="noopener noreferrer">EL MOKRETAR Malak</a></li>
+                            <li><a href="mailto:louisetberthaud.luthiers@gmail.com">louisetberthaud.luthiers@gmail.com</a></li>
+                            <li><a href="tel:+330490856503">+33 (0) 4 90 85 65 03</a></li>
+                            <li><a href="https://maps.app.goo.gl/ERc5fVqcMArq3Ebi9" target="_blank">19 Rue de la Croix, 84000 Avignon</a></li>
                         </ul>
                     </div>
                     <div class="moyens_paiement">
@@ -65,14 +53,14 @@
                             <li>Chèque</li>
                         </ul>
                     </div>
-                    <div class="contact">
-                        <span>Contact</span>
+                    <div class="info">
+                        <span>Informations</span>
                         <ul>
-                            <li><a href="mailto:louisberthaud.luthiers@gmail.com">louisberthaud.luthiers@gmail.com</a></li>
-                            <li><a href="tel:+330490856503">+33 (0) 4 90 85 65 03</a></li>
-                            <li><a href="https://maps.app.goo.gl/ERc5fVqcMArq3Ebi9" target="_blank">19 Rue de la Croix</a></li>
+                            <li><a href="index.php?page=mentionsLegales">Mention légales</a></li>
+                            <li>Site réalisé par <a href="#" target="_blank" rel="noopener noreferrer">EL MOKRETAR Malak</a></li>
                         </ul>
                     </div>
+                    
                 </div>
         </footer>
     </body>

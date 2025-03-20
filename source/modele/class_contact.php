@@ -1,0 +1,37 @@
+<?php
+
+class ContactMessage{
+    private $db;
+    private $insert;
+    private $select;
+
+    public function __construct($db){
+        $this->db = $db;
+        $this->insert = $this->db->prepare("INSERT INTO contact(objet, nom, prenom, email, telephone, message) VALUES (:objet, :nom, :prenom, :email, :telephone, :message)");
+        $this->select = $this->db->prepare("SELECT objet, nom, prenom, email, telephone, message FROM contact ORDER BY nom, prenom");
+    }
+
+    public function insert($objet, $nom, $prenom, $email, $telephone, $message){
+        $r = true;
+        $this->insert->execute(array(":objet" => $objet, ":email" => $email, ":nom" => $nom, ":prenom" => $prenom, ":email" => $email, ":telephone" => $telephone, ":message" => $message));
+        if ($this -> insert -> errorCode() != 0){
+            print_r($this->insert->errorInfo());
+            $r=false;
+        }
+        return $r;
+    }
+
+    public function select($objet, $nom, $prenom, $email, $telephone, $message){
+        $this->select->execute();
+        if ($this -> select -> errorCode() != 0){
+            print_r($this->select->errorInfo());
+        }
+        return $this->select->fetchAll();
+    }
+
+   
+    
+    // $this->insert = $this->db->prepare("INSERT INTO produits(nom, categorie, description, quantite, chemin_photo, prix) VALUES (:nom, :categorie, :description, :quantite, :chemin_photo, :prix)");
+}
+
+?>

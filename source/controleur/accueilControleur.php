@@ -20,5 +20,8 @@ function mentionsLegalesControleur($twig){
     echo $twig->render("mentionsLegales.twig", array());
 }
 
+function maintenanceControleur($twig){
+    echo $twig->render("maintenance.twig", array());
+}
 
 ?>

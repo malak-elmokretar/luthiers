@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }} Produits {% endblock %}
+
+{% block content %}
+<div class="overflow-auto"> 
+    <table class="table"> 
+        <thead>
+            <tr>
+                <th scope="col">Nom</th> 
+                <th scope="col">Catégorie</th> 
+                <th scope="col">Description</th> 
+                <th scope="col">Prix</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Chemin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produit in liste %}
+                <tr>
+                    <td>{{produit.nom}}</td>
+                    <td>{{produit.categorie}}</td>
+                    <td>{{produit.description}}</td>
+                    <td>{{produit.prix}}</td>
+                    <td>{{produit.quantite}}</td>
+                    <td><img src="{{produit.chemin}}" alt=""></td>
+                </tr>
+            {% endfor %} 
+        </tbody> 
+    </table> 
+</div>
+
+<button class="modif_produit"><a href="#">Modifier</a></button>
+
+{% endblock %}

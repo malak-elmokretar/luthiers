@@ -1,36 +1,119 @@
+/* Base */
+
 :root {
   color-scheme: light;
 }
 
-footer div{
+nav {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-footer div span, footer div ul{
-  display: block;
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
   justify-content: center;
 }
 
-.prestations, .atelier, .artisans {
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .grilleFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer .grilleFooter div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .grilleFooter div span {
+  margin-bottom: 10px;
+}
+
+footer .grilleFooter div ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .grilleFooter div ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+
+/* Page d'accueil */
+
+
+
+.accueil {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-image: url('../images/fond_violon.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.accueil h1 {
+  margin: 0 0 10px;
+}
+
+.accueil h2 {
+  margin: 0 0 20px;
+}
+
+.accueil button {
+  padding: 10px 20px;
+}
+
+
+.accueilPrestations, .atelier, .artisans {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin: 2rem 0;
 }
 
-.prestations img, .atelier img, .artisans img {
+.accueilPrestations img, .atelier img, .artisans img {
   width: 45%;
   height: auto;
 }
   
-div.prestations div.textePrestations, div.atelier div.texteAtelier, div.artisans div.texteArtisans {
+div.accueilPrestations div.textePrestations, div.atelier div.texteAtelier, div.artisans div.texteArtisans {
   display: block;
   justify-content: space-between;
   width: 50%;
 }
   
-.prestations {
+.accueilPrestations {
   flex-direction: row;
 }
   
@@ -42,7 +125,7 @@ div.prestations div.textePrestations, div.atelier div.texteAtelier, div.artisans
   flex-direction: row-reverse;
 }
   
-.prestations img, .atelier img {
+.accueilPrestations img, .atelier img {
   margin-right: 2rem;
 }
   
@@ -60,18 +143,33 @@ div.prestations div.textePrestations, div.atelier div.texteAtelier, div.artisans
   
 
 @media (max-width: 768px) {
-  .prestations, .atelier, .artisans {
+
+  nav {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+nav ul {
+    justify-content: flex-start;  /* On aligne la nav à gauche */
+}
+
+.logo-container {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+  .accueilPrestations, .atelier, .artisans {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
   
-  .prestations img, .atelier img, .artisans img {
+  .accueilPrestations img, .atelier img, .artisans img {
     max-width: 100%;
     margin-bottom: 5rem;
   }
   
-  .prestations .content, .atelier .content, .artisans .content {
+  .accueilPrestations .content, .atelier .content, .artisans .content {
     width: 100%;
   }
   
@@ -79,6 +177,8 @@ div.prestations div.textePrestations, div.atelier div.texteAtelier, div.artisans
     width: 100%;
   }
 }
-  
-  
-  
+
+
+.modif_produit{
+  justify-content:flex-end;
+}
