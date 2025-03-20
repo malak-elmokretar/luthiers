@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }} Ajout d'un produit {% endblock %}
+
+{% block content %}
+<h1>Ajouter un produit</h1>
+<div class="formulaire">
+    <form action="index.php?page=ajout_produit" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="inputNom">Nom :</label>
+        <input type="text" id="inputNom" name="inputNom" required>
+
+        <label for="inputCategorie">Catégorie :</label>
+        <input type="text" id="inputCategorie" name="inputCategorie" required>
+
+        <label for="inputDescription">Description :</label>
+        <input type="text" id="inputDescription" name="inputDescription" required>
+
+        <label for="inputPrix">Prix :</label>
+        <input type="number" id="inputPrix" name="inputPrix" required>
+
+        <label for="inputQuantite">Quantité :</label>
+        <input type="number" id="inputQuantite" name="inputQuantite" required>
+
+        <label for="inputPhoto">Photographie :</label>
+        <input type="file" id="inputPhoto" name="inputPhoto" accept="image/*" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnContacter">Envoyer</button>
+    </form>
+
+{% endblock %}
