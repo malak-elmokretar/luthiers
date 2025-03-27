@@ -1,8 +1,33 @@
 {% extends "base.twig" %}
 
-{% block title %} {{ parent() }} Produits {% endblock %}
+{% block title %} {{parent()}} Produits {% endblock %}
 
 {% block content %}
+
+<h1>Nos derniers produits</h1>
+
+<div class="container">
+    <div class="card-wrapper">
+        <ul class="card-list">
+            {% for produit in liste %}
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="{{produit.chemin}}" alt="Image {{produit.nom}}" class="photo_carousel_produits">
+                        <p class="badge">{{produit.prix}}€ TTC</p>
+                        <h2 class="titre_carousel_produits">{{ produit.nom }}</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="carousel-controls">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </div>
+</div>
+
+<h1>Tous nos produits</h1>
 <div class="overflow-auto"> 
     <table class="table"> 
         <thead>
@@ -30,7 +55,7 @@
     </table> 
 </div>
 
+
 <button><a href="index.php?page=ajoutProduit">Ajouter un produit</a></button>
 <button><a href="#">Modifier un produit</a></button>
-
 {% endblock %}

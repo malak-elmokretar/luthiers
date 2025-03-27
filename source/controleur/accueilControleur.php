@@ -24,8 +24,5 @@ function maintenanceControleur($twig){
     echo $twig->render("maintenance.twig", array());
 }
 
-function ajoutProduitControleur($twig){
-    echo $twig->render("ajoutProduit.twig", array());
-}
 
 ?>

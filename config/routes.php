@@ -10,6 +10,8 @@ function getPage($db){
     $lesPages["mentionsLegales"] = "mentionsLegalesControleur";
     $lesPages["produits"] = "produitsControleur";
     $lesPages["ajoutProduit"] = "ajoutProduitControleur";
+    $lesPages["inscription"] = "inscriptionControleur";
+    $lesPages["connexion"] = "connexionControleur";
     
     if ($db!= null){
         if (isset($_GET["page"])){

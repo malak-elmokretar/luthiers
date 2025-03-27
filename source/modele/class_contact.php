@@ -28,10 +28,6 @@ class ContactMessage{
         }
         return $this->select->fetchAll();
     }
-
-   
-    
-    // $this->insert = $this->db->prepare("INSERT INTO produits(nom, categorie, description, quantite, chemin_photo, prix) VALUES (:nom, :categorie, :description, :quantite, :chemin_photo, :prix)");
 }
 
 ?>

@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }}Connexion{% endblock %}
+
+{% block content %}
+{{ parent() }}
+
+{% if form.valide is defined %}
+    {% if form.valide == false %}
+        <p>Erreur: {{form.message}}</p>
+    {% endif %}
+{% else %}
+
+<div class="form_connexion">
+<form action="index.php?page=connexion" method="post" enctype="application/x-www-form-urlencoded">
+    <h1>Bon retour parmi nous! Connectez-vous</h1>
+    
+
+    <label for="inputnomUtilisateur" class="sr-only">E-mail :</label>
+    <input type="text" id="inputnomUtilisateur" name="inputnomUtilisateur" required autofocus>
+
+    <label for="inputPassword" class="sr-only">Mot de passe :</label>
+    <input type="password" id="inputPassword" name="inputPassword" required>
+    <br>
+    <button type="submit" name="btnConnecter">Se connecter</button>
+</form>
+</div>
+{% endif %}
+{% endblock %}

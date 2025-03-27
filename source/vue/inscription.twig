@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }}Inscription{% endblock %}
+
+{% block content %}
+    {% if form.valide is defined %} 
+        {% if form.valide == true %}
+            <script>console.log("Utilisateur créé !");</script>
+        {% endif %}
+    {% else %}
+        
+        <h1>Inscription</h1>
+        <form action="index.php?page=inscription" method="post" enctype="application/x-www-form-urlencoded">
+            <label for="inputNomInscription">Nom :</label>
+            <input type="text" id="inputNomInscription" name="inputNomInscription" required>
+
+            <label for="inputPrenomInscription">Prénom :</label>
+            <input type="text" id="inputPrenomInscription" name="inputPrenomInscription" required>
+
+            <label for="inputEmailInscription">E-mail :</label>
+            <input type="email" id="inputEmailInscription" name="inputEmailInscription" required>
+
+            <label for="inputNomUtilisateurInscription">Nom d'utilisateur :</label>
+            <input type="text" id="inputNomUtilisateurInscription" name="inputNomUtilisateurInscription" required>
+
+            <label for="inputPassword">Mot de passe :</label>
+            <input type="password"id="inputPasswordInscription" name="inputPasswordInscription" placeholder="Mot de passe" required>
+
+            <label for="inputPassword2">Confirmer le mot de passe :</label>
+            <input type="password" id="inputPassword2Inscription" name="inputPassword2Inscription" placeholder="Confirmation mot de passe" required>
+
+            <button type="submit" name="btnInscription">Envoyer</button>
+        </form>
+    
+    {% endif %}
+{% endblock %}
