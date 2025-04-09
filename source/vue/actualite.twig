@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }}Actualité{% endblock %}
+
+{% block content %}
+
+
+{% for actualite in liste %}
+<div class="{{actualite.titre}}">
+    <h1>{{actualite.titre}}</h1>
+    <p class="badge">Du {{actualite.date_debut}} au {{actualite.date_fin_}}</p>
+    <p>{{actualite.description}}</p>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }}Modifier un utilisateur{% endblock %}
+
+{% block content %}
+
+    {% if form.utilisateur is defined %}
+        {% if form.utilisateur != null %}
+    {# {% if form.valide is defined %} 
+        {% if form.valide == true %}
+            <script>console.log("Utilisateur créé !");</script>
+        {% endif %}
+    {% else %} #}
+        
+            <h1>Modifier un utilisateur</h1>
+            <form action="index.php?page=modificationUtilisateur" method="post" enctype="application/x-www-form-urlencoded">
+                <label for="inputNomModification">Nom :</label>
+                <input type="text" id="inputNomModification" name="inputNomModification" value="{{form.utilisateur.nom}}" required>
+
+                <label for="inputPrenomModification">Prénom :</label>
+                <input type="text" id="inputPrenomModification" name="inputPrenomModification" value="{{form.utilisateur.prenom}}" required>
+
+                <label for="inputEmailModification">E-mail :</label>
+                <input type="email" id="inputEmailModification" name="inputEmailModification" value="{{form.utilisateur.email}}" required>
+
+                <label for="inputNomUtilisateurModification">Nom d'utilisateur :</label>
+                <input type="text" id="inputNomUtilisateurModification" name="inputNomUtilisateurModification" value="{{form.utilisateur.nom_utilisateur}}" required>
+
+                <label for="inputPassword">Mot de passe :</label>
+                <input type="password"id="inputPasswordModification" name="inputPasswordModification" placeholder="Mot de passe">
+
+                <label for="inputPassword2">Confirmer le mot de passe :</label>
+                <input type="password" id="inputPassword2Modification" name="inputPassword2Modification" placeholder="Confirmation mot de passe">
+
+                <button type="submit" name="btnModification">Envoyer</button>
+            </form>
+
+            {% else %}
+                <h2 class="alert alert-danger" role="alert">{{ form.message }}</h2>
+                <a href="index.php?page=utilisateurs">Retourner sur la liste des utilisateurs</a> 
+            {% endif %} 
+    {% else %}   
+        <h2 class="alert alert-danger" role="alert">{{ form.message }}</h2> 
+        <a href="index.php?page=utilisateurs">Retourner sur la liste des utilisateurs</a> 
+    {% endif %}
+{% endblock %}

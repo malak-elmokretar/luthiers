@@ -28,15 +28,23 @@
 </div>
 
 <h1>Tous nos produits</h1>
+<form METHOD="POST" NAME="tri_produits">
+    <select name="tri">
+        <option value="">Trier les produits par</option>
+        <option value="titre">Nom</option>
+        <option value="prix">Prix</option>
+        <option value="quantite">Quantité</option>
+    </select>
+</form>
 <div class="overflow-auto"> 
     <table class="table"> 
         <thead>
             <tr>
                 <th scope="col">Nom</th> 
-                <th scope="col">Catégorie</th> 
+                {# <th scope="col">Catégorie</th>  #}
                 <th scope="col">Description</th> 
                 <th scope="col">Prix</th>
-                <th scope="col">Quantité</th>
+                {# <th scope="col">Quantité</th> #}
                 <th scope="col">Photo</th>
             </tr>
         </thead>
@@ -44,10 +52,10 @@
             {% for produit in liste %}
                 <tr>
                     <td>{{produit.nom}}</td>
-                    <td>{{produit.categorie}}</td>
+                    {# <td>{{produit.categorie}}</td> #}
                     <td>{{produit.description}}</td>
                     <td>{{produit.prix}}</td>
-                    <td>{{produit.quantite}}</td>
+                    {# <td>{{produit.quantite}}</td> #}
                     <td><img src="{{produit.chemin}}" alt=""></td>
                 </tr>
             {% endfor %} 

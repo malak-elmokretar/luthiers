@@ -13,7 +13,7 @@ function contactControleur($twig, $db){
         $form['email'] = $email;
         $form['objet'] = $objet;
         $contactMessage = new ContactMessage($db);
-        $exec = $contactMessage -> insert($email, $nom, $prenom, $email, $telephone, $message);
+        $exec = $contactMessage -> insert(htmlspecialchars($email), htmlspecialchars($nom), htmlspecialchars($prenom), htmlspecialchars($email), $telephone, htmlspecialchars($message));
         if (!$exec){
             $form["valide"] = false;
             $form["erreur"] = "Problème d'insertion, veuillez réessayer plus tard.";

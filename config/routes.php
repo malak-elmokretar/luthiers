@@ -12,6 +12,10 @@ function getPage($db){
     $lesPages["ajoutProduit"] = "ajoutProduitControleur";
     $lesPages["inscription"] = "inscriptionControleur";
     $lesPages["connexion"] = "connexionControleur";
+    $lesPages["actualite"]= "actualiteControleur";
+    $lesPages["deconnexion"] = "deconnexionControleur";
+    $lesPages["modificationUtilisateur"] = "modificationUtilisateurControleur";
+    $lesPages["utilisateurs"] = "utilisateursControleur";
     
     if ($db!= null){
         if (isset($_GET["page"])){
@@ -28,6 +32,6 @@ function getPage($db){
         $contenu = $lesPages["maintenance"];
     }
     
-    return $contenu;    
+    return $contenu;
 }
 ?>

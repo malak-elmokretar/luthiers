@@ -5,15 +5,17 @@ function connexionControleur($twig, $db){
   
     if (isset($_POST['btnConnexion'])){ 
         $form['valide'] = true; 
-        $inputnomUtilisateur = $_POST['inputnomUtilisateur']; 
-        $inputPassword = $_POST['inputPassword']; 
+        $nomUtilisateur = $_POST['inputnomUtilisateur']; 
+        $password = $_POST['inputPassword']; 
         $utilisateur = new Utilisateur($db); 
-        $unUtilisateur = $utilisateur->connect($inputnomUtilisateur);
+        $unUtilisateur = $utilisateur->connect($nomUtilisateur);
         if ($unUtilisateur!=null){
-            if(!password_verify($inputPassword,$unUtilisateur['mdp'])){
+            if(!password_verify($password,$unUtilisateur['pword'])){
                 $form['valide'] = false;
                 $form['message'] = 'Login ou mot de passe incorrect';
             } else {
+                $_SESSION["nomUtilisateur"] = $nomUtilisateur;
+                $_SESSION["pword"] = $password;
                 header("Location:index.php"); 
             }
         } else {
