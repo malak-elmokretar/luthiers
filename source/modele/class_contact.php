@@ -1,6 +1,6 @@
 <?php
 
-class ContactMessage{
+class Contact{
     private $db;
     private $insert;
     private $select;
@@ -21,7 +21,7 @@ class ContactMessage{
         return $r;
     }
 
-    public function select($objet, $nom, $prenom, $email, $telephone, $message){
+    public function select(){
         $this->select->execute();
         if ($this -> select -> errorCode() != 0){
             print_r($this->select->errorInfo());

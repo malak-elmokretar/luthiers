@@ -26,7 +26,7 @@
                         <a href="index.php?page=prestations">Prestations</a>
                     </li>
                     <li>
-                        <a href="index.php?page=produits">Produits</a>
+                        <a href="index.php?page=actualite">Actualité</a>
                     </li>
                     <li>
                         <a href="index.php?page=contact">Contact</a>
@@ -61,23 +61,21 @@
                         <span>Informations</span>
                         <ul>
                             <li><a href="index.php?page=mentionsLegales">Mentions légales</a></li>
-                            <li>Site réalisé par <a href="#" target="_blank" rel="noopener noreferrer">EL MOKRETAR Malak</a></li>
+                            <li>Site réalisé par <a href="https://www.linkedin.com/in/malak-el-mokretar/" target="_blank" rel="noopener noreferrer">EL MOKRETAR Malak</a></li>
                         </ul>
                     </div>
                     <div class="administration">
                     <span>Administration</span>
                         <ul>
                             {% if session.nomUtilisateur is defined %}
+                                <li><a href="index.php?page=administration">Administration</a></li>
                                 <li><a href="index.php?page=deconnexion">Déconnexion</a></li>
-                                <li><a href="#">Modifier une page</a></li>
-                                <li><a href="index.php?page=ajoutProduit">Modifier les produits</a></li>
                             {% else %}
                                 <li><a href="index.php?page=connexion">Connexion</a></li>
                             {% endif %}
                             
                         </ul>
                     </div>
-                    
                 </div>
         </footer>
     </body>

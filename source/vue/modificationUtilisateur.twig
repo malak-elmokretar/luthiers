@@ -33,7 +33,9 @@
                 <label for="inputPassword2">Confirmer le mot de passe :</label>
                 <input type="password" id="inputPassword2Modification" name="inputPassword2Modification" placeholder="Confirmation mot de passe">
 
-                <button type="submit" name="btnModification">Envoyer</button>
+                <input type="hidden" name="id" value="{{ form.utilisateur.id}}"/> 
+
+                <button type="submit" name="btnModification">Modifier</button>
             </form>
 
             {% else %}

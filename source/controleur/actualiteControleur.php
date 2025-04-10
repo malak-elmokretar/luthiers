@@ -2,8 +2,8 @@
 
 function actualiteControleur($twig, $db){
     $form = array(); 
-    $produit = new Produit($db); 
-    $liste = $produit->select(); 
+    $actualite = new Actualite($db); 
+    $liste = $actualite->select(); 
     echo $twig->render('actualite.twig', array('form'=>$form,'liste'=>$liste)); 
 }
 

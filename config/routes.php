@@ -16,6 +16,8 @@ function getPage($db){
     $lesPages["deconnexion"] = "deconnexionControleur";
     $lesPages["modificationUtilisateur"] = "modificationUtilisateurControleur";
     $lesPages["utilisateurs"] = "utilisateursControleur";
+    $lesPages["administration"] = "administrationControleur";
+    $lesPages["listeContact"] = "listeContactControleur";
     
     if ($db!= null){
         if (isset($_GET["page"])){

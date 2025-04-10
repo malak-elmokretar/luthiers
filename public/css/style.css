@@ -349,3 +349,40 @@ nav ul {
   padding: 10px;
   cursor: pointer;
 }
+
+
+
+div.admin ul li{
+  list-style: none;
+}
+
+
+/* Page Actualité */
+
+div.actualite {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  background: var(--pico-background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+div.actualite h1,
+div.actualite p:not(.badge) {
+  margin: 1rem 0;
+}
+
+div.actualite .badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--pico-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

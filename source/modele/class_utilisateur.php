@@ -14,7 +14,7 @@ class Utilisateur{
         $this->connect = $this->db->prepare("SELECT nom_utilisateur, pword FROM utilisateurs WHERE nom_utilisateur = :nom_utilisateur");
         $this->select = $db->prepare("SELECT id, email, nom_utilisateur, nom, prenom FROM utilisateurs ORDER BY nom;");
         $this->selectByID = $db->prepare("SELECT * FROM utilisateurs WHERE id=:id");
-        $this->$update = $db -> prepare("UPDATE utilisateurs SET email=:email, nom_utilisateur = :nom_utilisateur, pword=:pword, nom=:nom, prenom=:prenom WHERE id=:id");
+        $this->update = $db -> prepare("UPDATE utilisateurs SET email=:email, nom_utilisateur = :nom_utilisateur, pword=:pword, nom=:nom, prenom=:prenom WHERE id=:id");
     }
 
     public function insert($email, $nom_utilisateur, $pword, $nom, $prenom){
@@ -46,7 +46,7 @@ class Utilisateur{
 
     public function selectByID($id){
         $this->selectByID->execute(array(":id" => $id));
-        if ($this->select->errorCode()!=0){
+        if ($this->selectByID->errorCode()!=0){
             print_r($this->select->errorInfo());
         }
         return $this->selectByID->fetch();

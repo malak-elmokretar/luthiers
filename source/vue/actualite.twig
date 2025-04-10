@@ -5,14 +5,19 @@
 {% block content %}
 
 
-{% for actualite in liste %}
-<div class="{{actualite.titre}}">
-    <h1>{{actualite.titre}}</h1>
-    <p class="badge">Du {{actualite.date_debut}} au {{actualite.date_fin_}}</p>
-    <p>{{actualite.description}}</p>
-</div>
-
-{% endfor %}
-
-
+    {% for actualite in liste %}
+        <div class="{{actualite.titre}} actualite" style="background-image: url('./images/fond_violon.jpg');">
+            <h1>{{actualite.titre}}</h1>
+            {% if actualite.date_debut is not none or actualite.date_fin_ is not none %}
+                {% if (actualite.date_debut != NULL) and (actualite.date_fin_ != NULL) %}
+                    <p class="badge">Du {{actualite.date_debut}} au {{actualite.date_fin_}}</p>
+                {% elseif actualite.date_debut == NULL %}
+                    <p class="badge">Jusqu'au {{actualite.date_fin_}}</p>
+                {% elseif actualite.date_fin_ == NULL %}
+                    <p class="badge">Dès le {{actualite.date_debut}}</p>
+                {% endif %}
+            {% endif %}
+            <p>{{actualite.description}}</p>
+        </div>
+    {% endfor %}
 {% endblock %}

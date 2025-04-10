@@ -10,5 +10,6 @@ require_once "deconnexionControleur.php";
 require_once "ajoutProduitControleur.php";
 require_once "modificationUtilisateurControleur.php";
 require_once "utilisateursControleur.php";
+require_once "listeContactControleur.php";
 
 ?>

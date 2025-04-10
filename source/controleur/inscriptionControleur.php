@@ -11,13 +11,13 @@ function inscriptionControleur($twig, $db){
         $formInscription['valide']= true;
         if ($inputPassword!=$inputPassword2){
             $formInscription['valide'] = false; 
-            $formInscription['message'] = 'Les mots de passe sont différents';
+            $formInscription['message'] = 'Les mots de passe sont diff&eacute;rents';
         } else {
             $utilisateur = new Utilisateur($db);
             $exec = $utilisateur->insert($inputEmail, $inputNomUtilisateur, password_hash($inputPassword, PASSWORD_DEFAULT), $nom, $prenom);
             if (!$exec){
                 $formInscription['valide'] = false;
-                $formInscription['message'] = "Problème d'insertion dans la table utilisateur";
+                $formInscription['message'] = "Probl&egrave;me d'insertion dans la table utilisateur";
             }
         }
         $formInscription['emailInscription']= $inputEmail;

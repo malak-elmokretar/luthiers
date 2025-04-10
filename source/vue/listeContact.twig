@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block title %} {{parent()}} Messages reçus {% endblock %}
+
+{% block content %}
+
+    <div class="overflow-auto"> 
+        <table class="table"> 
+            <thead>
+                <tr>
+                    <th scope="col">Objet</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for utilisateur in liste %}
+                    <tr>
+                        <td>{{contact.objet}}</td>
+                        <td>{{utilisateur.nom}}</td>
+                        <td>{{utilisateur.prenom}}</td>
+                        <td>{{utilisateur.email}}</td>
+                        <td>{{utilisateur.telephone}}</td>
+                        <td>{{utilisateur.message}}</td>
+                    </tr>
+                {% endfor %} 
+            </tbody> 
+        </table> 
+    </div>
+{% endblock %}

@@ -24,5 +24,7 @@ function maintenanceControleur($twig){
     echo $twig->render("maintenance.twig", array());
 }
 
-
+function administrationControleur($twig){
+    echo $twig->render("administration.twig", array());
+}
 ?>

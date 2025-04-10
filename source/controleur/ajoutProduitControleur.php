@@ -13,7 +13,7 @@ function ajoutProduitControleur($twig, $db){
         $exec = $produitAjoute->insert($nom, $categorie, $description, $prix, $quantite, $chemin_photo);
         if (!$exec){
             $form["valide"] = false;
-            $form["erreur"] = "Problème d'insertion, veuillez réessayer plus tard.";
+            $form["erreur"] = "Probl&egrave;ème d'insertion, veuillez r&eacute;essayer plus tard.";
         }
     }
     echo $twig->render("ajoutProduit.twig", array("form" => $form));

@@ -12,11 +12,11 @@ function contactControleur($twig, $db){
         $form["valide"] = true;
         $form['email'] = $email;
         $form['objet'] = $objet;
-        $contactMessage = new ContactMessage($db);
-        $exec = $contactMessage -> insert(htmlspecialchars($email), htmlspecialchars($nom), htmlspecialchars($prenom), htmlspecialchars($email), $telephone, htmlspecialchars($message));
+        $contact = new Contact($db);
+        $exec = $contact -> insert(htmlspecialchars($email), htmlspecialchars($nom), htmlspecialchars($prenom), htmlspecialchars($email), $telephone, htmlspecialchars($message));
         if (!$exec){
             $form["valide"] = false;
-            $form["erreur"] = "Problème d'insertion, veuillez réessayer plus tard.";
+            $form["erreur"] = "Probl&egrave;ème d'insertion, veuillez r&eacute;essayer plus tard.";
         }
     }
     echo $twig->render("contact.twig", array("form"=>$form));

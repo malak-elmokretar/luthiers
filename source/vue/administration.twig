@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block title %} {{ parent() }}Administration{% endblock %}
+
+{% block content %}
+
+<div class="admin">
+    <h1>Espace administration</h1>
+
+    <h2>Plan du site</h2>
+    <ul>
+        <li>Gestion de comptes</li>
+        <li>
+            <ul>
+                <li><a href="index.php?page=utilisateurs">Liste des utilisateurs</a></li>
+                <li><a href="index.php?page=inscription">Créer un utilisateur</a></li>
+            </ul>
+        </li>
+        <li>Gestion des messages</li>
+        <li>
+            <ul>
+                <li><a href="index.php?page=listeContact">Liste des messages</a></li>
+            </ul>
+        </li>
+        <li>Gestion des pages</li>
+        <li>
+            <ul>
+                <li><a href="index.php?page=modificationPage">Modifier le contenu d'une page</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+
+{% endblock %}
